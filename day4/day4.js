@@ -12,6 +12,7 @@ const getInput = () => {
     let testOfLAstIf=0;
     let  testOf2If=0;
     let  testOf1If=0;
+    
 
 
     // all required fields===============================
@@ -25,7 +26,7 @@ const getInput = () => {
         
             for (let j = 0; j < field.length ; j++){
 
-            //byr 
+             //byr 
                 if ( field[j].includes('byr')){
                     let element = field[j].split(':'); 
                     
@@ -144,14 +145,14 @@ const getInput = () => {
 
     
     }
-    else if (!passports[i].includes('cid') && (passports[i].includes('ecl')||passports[i].includes('pid'))||passports[i].includes('eyr')|passports[i].includes('hcl')||passports[i].includes('byr')||passports[i].includes('iyr')||passports[i].includes('pid')){
+    else if (!passports[i].includes('cid') && (passports[i].includes('ecl') && passports[i].includes('pid') && passports[i].includes('eyr') && passports[i].includes('hcl') && passports[i].includes('byr') && passports[i].includes('iyr') && passports[i].includes('pid'))){
         testOf2If++;
         let passportElements = passports[i];
         let field = passportElements.replace(/\n/g, ' ').split(' ');
         
             for (let j = 0; j < field.length ; j++){
 
-            //byr 
+              //byr 
                 if ( field[j].includes('byr')){
                     let element = field[j].split(':'); 
                     
@@ -266,12 +267,8 @@ const getInput = () => {
             valid=0;
     
     }
-        invalid++;
-        testOfLAstIf++
-
-    
-        validPassports+=0;
-        
+       
+    testOfLAstIf++;
 
 
 
@@ -280,9 +277,9 @@ const getInput = () => {
     } 
 
     console.log(`Solution : ${validPassports}`);
-    console.log(`test${testOfLAstIf}`);
-    console.log(`test1${testOf1If}`);
-    console.log(`test2${testOf2If}`);
+    console.log(`test ${testOfLAstIf}`);
+    console.log(`test1 ${testOf1If}`);
+    console.log(`test2 ${testOf2If}`);
     console.log(passports.length);
     return validPassports;
 }
